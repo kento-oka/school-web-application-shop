@@ -4,7 +4,8 @@ drop database if exists shop;
 create database shop character set utf8 collate utf8_general_ci;
 
 # ユーザーshoppingに、パスワードsiteを設定し、データベースshopに対するすべての権限を付与
-grant all privileges on shop.* to shopping@localhost identified by 'site';
+create user shopping@localhost identified by 'site';
+grant all privileges on shop.* to shopping@localhost;
 
 # データベースshopを使用する
 use shop;
